@@ -5,7 +5,6 @@ import * as path from 'path';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
-  // 设置路径别名
   resolve: {
     // 路径别名配置
     alias: {
