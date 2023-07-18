@@ -50,7 +50,7 @@ jobs:
           npm install
           npm run build
 
-      - name: Copy dist to dist-branch # 将 dist 文件夹拷贝到另一个分支
+      - name: Copy dist to dist # 将 dist 文件夹拷贝到另一个分支
         run: |
           git config --global user.name "fei"
           git config --global user.email "1310314719@qq.com"
