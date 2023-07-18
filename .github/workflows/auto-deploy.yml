@@ -54,7 +54,7 @@ jobs:
         run: |
           git config --global user.name "fei"
           git config --global user.email "1310314719@qq.com"
-          git checkout -b dist
+          git checkout dist
           git add .
           git commit -m "Add built files"
           git push origin dist
