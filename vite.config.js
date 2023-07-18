@@ -4,7 +4,8 @@ import * as path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: './',
+  // base: './',
+  base: '/shortUrl/',
   plugins: [vue()],
   resolve: {
     // 路径别名配置
