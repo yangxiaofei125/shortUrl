@@ -54,10 +54,10 @@ jobs:
         run: |
           git config --global user.name "fei"
           git config --global user.email "1310314719@qq.com"
-          git checkout dist
+          git checkout -b gh-pages
           git add .
           git commit -m "Add built files"
-          git push origin dist
+          git push origin gh-pages
 
       - name: Deploy # 部署
         uses: JamesIves/github-pages-deploy-action@v4.3.3
