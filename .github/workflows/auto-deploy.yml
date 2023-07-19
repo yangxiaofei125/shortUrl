@@ -49,16 +49,6 @@ jobs:
         run: |
           npm install
           npm run build
-
-      - name: Copy dist to dist # 将 dist 文件夹拷贝到另一个分支
-        run: |
-          git config --global user.name "fei"
-          git config --global user.email "1310314719@qq.com"
-          git checkout -b gh-pages
-          git add .
-          git commit -m "Add built files"
-          git push origin gh-pages
-
       - name: Deploy # 部署
         uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
