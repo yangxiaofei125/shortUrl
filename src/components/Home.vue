@@ -38,7 +38,7 @@ function copy(text) {
       <button class="marginL10 btn" @click="requestServer()">提交</button>
     </div>
     <p @click="copy(shortUrl)">{{ shortUrl }}</p>
-    <input type="text" class="form__input" placeholder="Type anything...">
+    <!-- <input type="text" class="form__input" placeholder="Type anything..."> -->
 
   </div>
 </template>
