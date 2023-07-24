@@ -37,32 +37,35 @@ function copy(text) {
   <div class="home">
     <div class="container">
       <span class="marginR10">请输入网址:</span>
-      <input ref="longUrlInput" type="text" v-model="longUrl" @keyup.enter="requestServer()">
-      <button class="marginL10 btn" @click="requestServer()">提交</button>
+      <input ref="longUrlInput" type="text" class="form_input" placeholder="Type anything..." v-model="longUrl"
+        @keyup.enter="requestServer()">
+      <div class="btn btn__primary" @click="requestServer()">
+        <p>提交</p>
+      </div>
     </div>
     <p @click="copy(shortUrl)">{{ shortUrl }}</p>
-    <!-- <input type="text" class="form__input" placeholder="Type anything..."> -->
 
   </div>
 </template>
 
 <style scoped lang="scss">
-:root {
-  --primary-light: #8abdff;
-  --primary: #6d5dfc;
-  --primary-dark: #5b0eeb;
+$primary-light: #8abdff;
+$primary: #6d5dfc;
+$primary-dark: #5b0eeb;
 
-  --white: #FFFFFF;
-  --greyLight-1: #E4EBF5;
-  --greyLight-2: #c8d0e7;
-  --greyLight-3: #bec8e4;
-  --greyDark: #9baacf;
-}
+$white: #FFFFFF;
+$greyLight-1: #E4EBF5;
+$greyLight-2: #c8d0e7;
+$greyLight-3: #bec8e4;
+$greyDark: #9baacf;
 
-$shadow: .3rem .3rem .6rem var(--greyLight-2),
-  -.2rem -.2rem .5rem var(--white);
-$inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2),
-  inset -.2rem -.2rem .5rem var(--white);
+
+$white: #fff;
+
+$shadow: .3rem .3rem .6rem $greyLight-2,
+  -.2rem -.2rem .5rem $white;
+$inner-shadow: inset .2rem .2rem .5rem $greyLight-2,
+  inset -.2rem -.2rem .5rem $white;
 
 
 
@@ -76,39 +79,79 @@ $inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2),
   margin-left: 10px;
 }
 
+.form_input {
+  width: 14rem;
+  height: 3rem;
+  border: none;
+  border-radius: .7rem;
+  font-size: 1.2rem;
+  padding-left: 1.4rem;
+  box-shadow: inset .2rem .2rem .5rem #c8d0e7,
+    inset -.2rem -.2rem .5rem $white;
+  background: none;
+  font-family: inherit;
+  color: #9baacf;
+
+  &::placeholder {
+    color: #bec8e4;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: .3rem .3rem .6rem #c8d0e7,
+      -.2rem -.2rem .5rem #fff;
+  }
+}
+
 .home {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: #E4EBF5;
+  padding: 20px;
 
-  .container {}
+  .container {
+    display: flex;
+    align-items: center;
+  }
 
   p {
     color: blue;
   }
 
-  .from__input {
-    width: 20.4rem;
-    height: 4rem;
-    border: none;
-    border-radius: 1rem;
-    font-size: 1.4rem;
-    padding-left: 1.4rem;
-    box-shadow: $inner-shadow;
-    background: none;
-    font-family: inherit;
-    color: var(--greyDark);
+  .btn {
+    width: 5rem;
+    height: 2rem;
+    border-radius: .4rem;
+    box-shadow: $shadow;
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: .3s ease;
 
-    &::placeholder {
-      color: var(--greyLight-3);
+    &__primary {
+      background: $primary;
+      box-shadow: inset .2rem .2rem 1rem $primary-light,
+        inset -.2rem -.2rem 1rem $primary-dark,
+        $shadow;
+      color: $greyLight-1;
+
+      &:hover {
+        color: $white;
+      }
+
+      &:active {
+        box-shadow: inset .2rem .2rem 1rem $primary-dark,
+          inset -.2rem -.2rem 1rem $primary-light;
+      }
     }
 
-    &:focus {
-      outline: none;
-      box-shadow: $shadow;
-    }
+
   }
-
 }
 </style>

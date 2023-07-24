@@ -15,9 +15,9 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://short.yuluo.link:8080', // Your API server domain
+        target: 'http://short.yuluo.link', // Your API server domain
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''), // Remove the "/api" prefix before making the request
+        // rewrite: (path) => path.replace(/^\/api/, ''), // Remove the "/api" prefix before making the request
       },
     },
   },
