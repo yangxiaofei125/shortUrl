@@ -4,7 +4,7 @@ import Home from './components/Home.vue'
 </script>
 
 <template>
-  <div >
+  <div class='app'>
     <Home />
   </div>
 </template>
@@ -25,6 +25,13 @@ import Home from './components/Home.vue'
   filter: drop-shadow(0 0 2em #42b883aa);
 } */
 
+.app {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
 
 *,
 *::before,

@@ -21,10 +21,10 @@ function copy(text) {
   const textToCopy = text;
   navigator.clipboard.writeText(textToCopy)
     .then(() => {
-      console.log("复制成功");
+      alert('复制成功');
     })
     .catch((err) => {
-      console.error("复制失败:", err);
+      alert("复制失败:", err);
     });
 };
 
@@ -37,7 +37,7 @@ function copy(text) {
   <div class="home">
     <div class="container">
       <span class="marginR10">请输入网址:</span>
-      <input ref="longUrlInput" type="text" class="form_input" placeholder="Type anything..." v-model="longUrl"
+      <input ref="longUrlInput" type="text" class="form_input marginR10" placeholder="Type anything..." v-model="longUrl"
         @keyup.enter="requestServer()">
       <div class="btn btn__primary" @click="requestServer()">
         <p>提交</p>
@@ -86,20 +86,20 @@ $inner-shadow: inset .2rem .2rem .5rem $greyLight-2,
   border-radius: .7rem;
   font-size: 1.2rem;
   padding-left: 1.4rem;
-  box-shadow: inset .2rem .2rem .5rem #c8d0e7,
+  box-shadow: inset .2rem .2rem .5rem $greyLight-2,
     inset -.2rem -.2rem .5rem $white;
   background: none;
   font-family: inherit;
-  color: #9baacf;
+  color: $greyDark;
 
   &::placeholder {
-    color: #bec8e4;
+    color: $greyLight-3;
   }
 
   &:focus {
     outline: none;
-    box-shadow: .3rem .3rem .6rem #c8d0e7,
-      -.2rem -.2rem .5rem #fff;
+    box-shadow: .3rem .3rem .6rem $greyLight-2,
+      -.2rem -.2rem .5rem $white;
   }
 }
 
@@ -110,16 +110,22 @@ $inner-shadow: inset .2rem .2rem .5rem $greyLight-2,
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #E4EBF5;
+  background: $greyLight-1;
   padding: 20px;
 
   .container {
     display: flex;
     align-items: center;
+    span {
+      font-size: 1.2rem;
+    }
   }
 
   p {
-    color: blue;
+    display: inline-block;
+    color: $greyLight-3;
+    margin-top: 20px;
+    font-size: 1rem;
   }
 
   .btn {
