@@ -4,12 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
     "axios": "^1.4.0",
+    "element-plus": "^2.3.8",
     "sakana": "^1.0.8",
     "sakana-widget": "^2.6.0",
     "vue": "^3.3.4"
@@ -17,6 +18,8 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.3",
     "sass": "^1.64.1",
+    "unplugin-auto-import": "^0.16.6",
+    "unplugin-vue-components": "^0.25.1",
     "vite": "^4.4.4"
   }
 }

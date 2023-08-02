@@ -21,10 +21,13 @@ function copy(text) {
   const textToCopy = text;
   navigator.clipboard.writeText(textToCopy)
     .then(() => {
-      alert('复制成功');
+      ElMessage({
+        message: '复制成功',
+        type: 'success',
+      })
     })
     .catch((err) => {
-      alert("复制失败:", err);
+       ElMessage.error('复制失败')
     });
 };
 
