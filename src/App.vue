@@ -31,6 +31,7 @@ import Home from './components/Home.vue'
     right: 0;
     bottom: 0;
     left: 0;
+    cursor: url(@/assets/background.cur), default;
 }
 
 *,
@@ -38,7 +39,7 @@ import Home from './components/Home.vue'
 *::after {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
+  //box-sizing: inherit;
   box-sizing: border-box;
   font-size: 62.5%;
   /* // 1rem = 10px    100% = 16px */

@@ -10,6 +10,7 @@ watch(longUrl, (newUrl) => {
 });
 
 async function requestServer() {
+  if((longUrl.value) === '') return;
   getShortUrl(longUrl.value).then((res) => {
     shortUrl.value = res;
     longUrl.value = '';
