@@ -22,7 +22,7 @@ jobs:
 
             - uses: actions/setup-node@v1
               with:
-                  node-version: v14.17.0
+                  node-version: v16.0.0
 
             #缓存依赖
             - name: Cache nodemodules
@@ -48,13 +48,26 @@ jobs:
             - name: Build
               run: yarn build
 
-            # 上传打包资源
-            - name: Deploy
-              uses: easingthemes/ssh-deploy@v2.0.7
-              env:
-                  SSH_PRIVATE_KEY: ${{ env.SERVER_PRIVATE_KEY }}
-                  ARGS: '-avz --delete'
-                  SOURCE: 'dist/'
-                  REMOTE_HOST: ${{ env.SERVER_HOST }}
-                  REMOTE_USER: ${{ env.USER_NAME }}
-                  TARGET: /opt/1panel/apps/openresty/openresty/www/sites/short.yuluo.link/index # 服务器目标路径
+
+                           # 上传打包资源
+            - name: Upload to server
+              uses: appleboy/scp-action@master
+              with:
+                    host: ${{ secrets.SERVER_HOST }} # 设置为您的服务器IP地址
+                    username: ${{ secrets.USER_NAME }} # 设置为您的服务器用户名
+                    password: ${{ secrets.SERVER_PRIVATE_KEY }} # 设置为您的服务器密码
+                    source: 'dist/'
+                    target: '/opt/1panel/apps/openresty/openresty/www/sites/short.yuluo.link/index'
+                    strip_components: 1
+
+
+            # # 上传打包资源
+            # - name: Deploy
+            #   uses: easingthemes/ssh-deploy@v4.1.8
+            #   env:
+            #       SSH_PRIVATE_KEY: ${{ env.SERVER_PRIVATE_KEY }}
+            #       ARGS: '-avz --delete'
+            #       SOURCE: 'dist/'
+            #       REMOTE_HOST: ${{ env.SERVER_HOST }}
+            #       REMOTE_USER: ${{ env.USER_NAME }}
+            #       TARGET: /usr/local/yuluo # 服务器目标路径
