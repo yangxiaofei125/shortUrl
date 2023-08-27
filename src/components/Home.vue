@@ -114,7 +114,8 @@ $inner-shadow: inset .2rem .2rem .5rem $greyLight-2,
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: $greyLight-1;
+  //background: $greyLight-1;
+  background: tan;
   padding: 20px;
 
   .container {
