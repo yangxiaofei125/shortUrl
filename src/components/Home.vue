@@ -11,6 +11,11 @@ watch(longUrl, (newUrl) => {
 
 async function requestServer() {
   if((longUrl.value) === '') return;
+  const urlPattern = /[a-zA-z]+(:\/\/)*[^\s]*/;
+  if(!urlPattern.test(longUrl.value)){
+    ElMessage.error('请输入正确的网址')
+    return
+  }
   getShortUrl(longUrl.value).then((res) => {
     shortUrl.value = res;
     longUrl.value = '';
@@ -84,12 +89,12 @@ $inner-shadow: inset .2rem .2rem .5rem $greyLight-2,
 }
 
 .form_input {
-  width: 14rem;
+  width: 18rem;
   height: 3rem;
   border: none;
   border-radius: .7rem;
-  font-size: 1.2rem;
-  padding-left: 1.4rem;
+  font-size: 1.1rem;
+  padding-left: 0.5rem;
   box-shadow: inset .2rem .2rem .5rem $greyLight-2,
     inset -.2rem -.2rem .5rem $white;
   background: none;
