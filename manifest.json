@@ -1,0 +1,21 @@
+{
+  "index.css": {
+    "file": "assets/index-60d567a2.css",
+    "src": "index.css"
+  },
+  "index.html": {
+    "assets": [
+      "assets/background-85fddaef.cur"
+    ],
+    "css": [
+      "assets/index-60d567a2.css"
+    ],
+    "file": "assets/index-959e8f22.js",
+    "isEntry": true,
+    "src": "index.html"
+  },
+  "src/assets/background.cur": {
+    "file": "assets/background-85fddaef.cur",
+    "src": "src/assets/background.cur"
+  }
+}
